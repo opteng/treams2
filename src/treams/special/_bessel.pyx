@@ -33,6 +33,8 @@ cdef number_t jv_d(double l, number_t z) nogil:
 
 cdef double complex spherical_hankel1(double n, double complex z) nogil:
     """Spherical Hankel function of the first kind"""
+    if z  == 0:
+        return 0.
     return sqrt(pi / (2 * z)) * cs.hankel1(n + 0.5, z)
 
 
